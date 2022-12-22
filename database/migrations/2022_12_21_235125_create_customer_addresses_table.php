@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string(column:'state', length: 45)->nullable();
             $table->string(column:'zipcode', length: 45);
             $table->string(column:'country_code', length: 3);
-            $table->foreignId(column:'customer_id')->references(column:'id')->on(table:'customer');
+            $table->foreignId(column:'customer_id')->references(column:'id')->on(table:'customers');
             $table->timestamps();
             $table->foreign(columns:'country_code')->references(column:'code')->on(table:'countries');
         });

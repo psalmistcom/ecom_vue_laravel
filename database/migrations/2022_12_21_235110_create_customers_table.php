@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string(column:'phone')->nullable();
             $table->string(column:'status', length: 45)->nullable();
             $table->timestamps();
-            $table->foreignIdFor(model: User::class, column:'created_at')->nullable();
-            $table->foreignIdFor(model: User::class, column:'updated_at')->nullable();
+            $table->foreignIdFor(User::class, 'created_by')->nullable();
+            $table->foreignIdFor(User::class, 'updated_by')->nullable();
         });
     }
 
